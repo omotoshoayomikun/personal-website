@@ -1,0 +1,127 @@
+.project {
+    &_bio_img {
+        height: 50vh;
+        width: 100%;
+        background: linear-gradient(to right, rgba($primary-color, 0.9), rgba($primary-color, 0.3)), url('../../public/img/4x.jpeg') top center;
+        background-size: cover;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+
+
+    &_bio {
+        width: 80%;
+        text-align: center;
+
+        .text_secondary {
+            padding-bottom: 1rem;
+        }
+
+    }
+
+    .portfolio {
+        display: grid;
+        width: 75%;
+        margin: auto;
+        grid-template-columns: 1fr;
+        grid-gap: 2rem;
+        padding: 2rem 0;
+
+        &_card {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            // gap: 2rem;
+            background: linear-gradient(-145deg, $primary-color, lighten($primary-color, 5%));
+            box-shadow: 5px 5px 15px #00000083, -5px -5px 15px #1d1d1d83;
+            padding: 2rem;
+            border-radius: 6px;
+            border-bottom: 5px solid $action-color;
+
+            .portfolio_img_cont {
+                flex-basis: 50%;
+                overflow: hidden;
+                border-radius: 8px;
+            }
+            
+            .img {
+                width: 100%;
+                height: 280px;
+                border-radius: 8px;
+                @include transition-ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+
+            .portfolio_wrap {
+                flex-basis: 45%;
+                // color: $action-color;
+
+                h2 {
+                    color: $action-color;
+                    margin-bottom: 1rem;
+                }
+
+                p {
+                    line-height: 1.5rem;
+                    font-family: WorkSans-Regular;
+                    height: 144px;
+                    overflow: hidden;
+                    overflow-y: scroll;
+                }
+
+                .badge_container {
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin: 1rem 0;
+
+                    .badge {
+                        position: relative;
+                        padding: 7px 7px 7px 18px;
+                        // background: lighten($action-color , 20%);
+                        border: 1px solid $action-color;
+                        border-radius: 20px;
+                        font-size: 12px;
+                        // margin: 1rem 0;
+                        margin-right: 0.5rem;
+                        margin-bottom: 0.5rem;
+
+                        &::before {
+                            position: absolute;
+                            content: '';
+                            width: 8px;
+                            height: 8px;
+                            border: 1px solid $action-color;
+                            background: $action-color;
+                            border-radius: 10px;
+                            top: 7.5px;
+                            left: 5px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+
+    // .icons_container1 {
+    //     // margin-top: 20px;
+
+    // }
+
+    .icons_ico_cont {
+        font-size: 2rem;
+        margin-right: 1rem;
+        @include transition-ease;
+
+        &:hover {
+            color: $action-color
+        }
+    }
+
+}

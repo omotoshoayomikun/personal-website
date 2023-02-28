@@ -1,0 +1,107 @@
+.contact {
+    &_bio_img {
+        height: 50vh;
+        width: 100%;
+        background: linear-gradient(to right, rgba($primary-color, 0.9), rgba($primary-color, 0.3)), url('../../public/img/4x.jpeg') top center;
+        background-size: cover;
+        display: flex;
+        justify-content: flex-end;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+    &_bio {
+        width: 80%;
+        text-align: center;
+
+        .text_secondary {
+            padding-bottom: 1rem;
+        }
+
+    }
+
+    &_wrap {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+
+        margin: 50px auto;
+        padding-bottom: 100px;
+    }
+
+    &_wrap_box1 {
+        flex-basis: 40%;
+    }
+
+    &_wrap_box2 {
+        flex-basis: 55%;
+    }
+
+    .card {
+        width: 100%;
+        background: linear-gradient(-145deg, $primary-color, lighten($primary-color, 5%));
+        box-shadow: 5px 5px 15px #00000083, -5px -5px 15px #1d1d1d83;
+        padding: 2rem;
+        border-radius: 6px;
+        border-bottom: 5px solid $action-color;
+
+        &_row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 1.2rem;
+
+            .col {
+                width: 100%;
+            }
+        }
+
+        .img_con {
+            width: 100%;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+
+            .img {
+                width: 100%;
+                height: 250px;
+                border-radius: 8px;
+                @include transition-ease;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+            }
+        }
+
+        .text_header {
+            margin-top: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 800;
+        }
+
+        .text {
+            font-size: 18px;
+            line-height: 1.4rem;
+        }
+
+    }
+    
+    .nbm {
+        padding-bottom: 4rem !important;
+    }
+    // .icons_container1 {
+    //     // margin-top: 20px;
+
+    // }
+
+    .icons_ico_cont {
+        font-size: 2.5rem;
+        margin-right: 1rem;
+        @include transition-ease;
+
+        &:hover {
+            color: $action-color
+        }
+    }
+}

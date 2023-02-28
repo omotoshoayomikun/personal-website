@@ -1,0 +1,16 @@
+.footer {
+    &_container1 {}
+
+    &_ico_cont {
+        font-size: 2.5rem;
+        margin-right: 1rem;
+        @include transition-ease;
+
+        &:hover {
+            color: $action-color
+        }
+    }
+
+    &_icon {}
+
+}

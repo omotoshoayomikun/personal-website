@@ -1,0 +1,258 @@
+@include media-md {
+    .home {
+        display: flex;
+        flex-direction: column-reverse;
+        height: auto;
+        gap: 20px;
+        padding-bottom: 3rem;
+
+
+
+        &_image_container {
+            justify-content: center;
+            width: 80%;
+            margin-top: 30px;
+
+            &::before {
+                width: 100%;
+            }
+
+            .home_image_img {
+                width: 100%;
+                height: 600px;
+                margin-right: 10px;
+            }
+        }
+
+        &_text {
+            font-size: 50px;
+        }
+
+        &_text_pro {
+            font-size: 30px;
+        }
+    }
+
+    .menu {
+
+        &_btn {
+            position: absolute;
+            z-index: 1;
+            // right: 1rem;
+            top: 0rem;
+            height: 50px;
+            // height: 20px;
+            width: 100%;
+            cursor: pointer;
+            visibility: visible;
+            // background-color: $alt-color;
+
+
+            &__burger {
+                position: absolute;
+                right: 1rem;
+                top: 1.5rem;
+                width: 28px;
+                height: 3px;
+                background-color: $text-color;
+                @include transition-ease;
+
+                &::before {
+                    content: '';
+                    width: 28px;
+                    height: 3px;
+                    position: absolute;
+                    top: -8px;
+                    background-color: $text-color;
+                    @include transition-ease
+                }
+
+                &::after {
+                    content: '';
+                    width: 20px;
+                    height: 3px;
+                    position: absolute;
+                    top: 8px;
+                    background-color: $text-color;
+                    @include transition-ease
+                }
+
+                &.open {
+                    transform: rotate(720deg);
+                    background: transparent;
+
+                    &::before {
+                        transform: rotate(45deg) translate(5px, 8px);
+                    }
+
+                    &::after {
+                        width: 28px;
+                        transform: rotate(-45deg) translate(3px, -7px);
+                    }
+                }
+            }
+        }
+
+
+
+        .nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            opacity: 0.98;
+            visibility: hidden;
+
+            &.open {
+                visibility: visible;
+            }
+
+            .menu_nav {
+                display: flex;
+                flex-flow: column wrap;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                overflow: hidden;
+                background: $alt-color;
+                list-style-type: none;
+                padding-right: 1rem;
+                transform: translateY(-100%);
+                @include transition-ease;
+
+                &.open {
+                    transform: translateY(0);
+                }
+
+                &__item {
+                    transform: translateX(100vw);
+                    // @include transition-ease;
+
+                    &.open {
+                        transform: translateX(0);
+                    }
+                }
+
+                &__link {
+                    display: inline-block;
+                    font-size: 1.5rem;
+                    text-transform: uppercase;
+                    padding: 1.2rem 0px;
+                    font-weight: 300 !important;
+                    @include transition-ease;
+
+                    &.active {
+                        color: $action-color;
+                    }
+
+                    &:hover {
+                        color: $action-color;
+                    }
+                }
+            }
+        }
+    }
+
+    .about {
+
+        .job_container {
+            width: 80% !important;
+        }
+    }
+
+    .project {
+
+        .portfolio {
+            width: 90% !important;
+        }
+    }
+
+
+    .contact {
+        &_wrap {
+            display: block !important;
+        }
+
+        .img_con {
+            display: none;
+        }
+
+
+        &_wrap_box1 {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+
+@include media-sm {
+    .home {
+
+        &_text {
+            font-size: 32px;
+            letter-spacing: 0.3rem;
+            line-height: 3rem;
+        }
+
+        &_text_pro {
+            margin-bottom: 10px;
+            font-size: 20px;
+
+            &_text {
+                display: block;
+                line-height: 1.5rem;
+            }
+        }
+
+        &_text_name {
+            font-size: 50px;
+            font-family: Montserrat-Bold;
+            line-height: inherit;
+        }
+
+
+        &_image_container {
+            justify-content: center;
+            width: 100%;
+
+            &::before {
+                width: 100%;
+            }
+
+
+            .home_image_img {
+                width: 100%;
+                height: 440px;
+                margin-right: 10px;
+            }
+        }
+
+    }
+
+    .about {
+
+        .about_bio {
+            width: 90%;
+
+            .p {
+                margin-bottom: 0.5rem;
+            }
+        }
+
+        .job_container {
+            width: 90% !important;
+        }
+    }
+
+    .project {
+        .portfolio {
+
+            .portfolio_card {
+                display: block;
+                padding: 1rem;
+            }
+        }
+    }
+
+
+}
