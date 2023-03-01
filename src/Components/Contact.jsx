@@ -61,16 +61,16 @@ function Contact() {
               <div>
                 <h5 className='mb-7'>FIND WITH ME</h5>
                 <div className="icons_container1">
-                  <Link to='https://twitter.com/OmotoshoAJ' className='icons_ico_cont'>
+                  <Link to='https://twitter.com/OmotoshoAJ' target='_blank' className='icons_ico_cont'>
                     <BsTwitter className='icons_icon' />
                   </Link>
-                  <Link to='https://www.linkedin.com/in/omotosho-ayomikun-61aa0623a/' className='icons_ico_cont'>
+                  <Link to='https://www.linkedin.com/in/omotosho-ayomikun-61aa0623a/' target='_blank' className='icons_ico_cont'>
                     <BsLinkedin className='icons_icon' />
                   </Link>
-                  <Link to='https://www.instagram.com/omotosho_aj/' className='icons_ico_cont'>
+                  <Link to='https://www.instagram.com/omotosho_aj/' target='_blank' className='icons_ico_cont'>
                     <BsInstagram className='icons_icon' />
                   </Link>
-                  <Link to='https://www.facebook.com/ayomikun.omotosho.5/' className='icons_ico_cont'>
+                  <Link to='https://www.facebook.com/ayomikun.omotosho.5/' target='_blank' className='icons_ico_cont'>
                     <BsFacebook className='icons_icon' />
                   </Link>
                 </div>
