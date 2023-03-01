@@ -8,8 +8,9 @@
 @import 'about';
 @import 'portfolio';
 @import 'contact';
-@import 'form/input.scss';
-@import 'form/button.scss';
+@import 'form/input';
+@import 'form/button';
+@import 'form/spinner';
 
 body {
   background: $alt-color;

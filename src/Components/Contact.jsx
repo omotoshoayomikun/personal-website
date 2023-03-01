@@ -6,12 +6,13 @@ import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
+import { SmSpinner } from './Form/Spinner'
 
 function Contact() {
 
   document.title = 'Omotosho Ayomikun Contact';
-  const notify = () => toast.success("🚀 Email sent!");
-  const Errnotify = () => toast.error("🔄 Please check your internet and Try again!");
+  const notify = (message) => toast.success(message);
+  const Errnotify = (message) => toast.error(message);
 
   const [value, setValue] = useState({
     name: '',
@@ -21,19 +22,27 @@ function Contact() {
     message: '',
   })
 
+  const [spinner, setSpinner] = useState(false)
+
   const onChange = (e, name) => {
     setValue({ ...value, [name]: e.target.value })
   }
 
   const handleSubmit = () => {
-
-    emailjs.send('service_g401bj6', 'template_jrry03i', value, 'ElCEm00E3DnLjft1k')
-    .then((result) => {
-      setValue({name: '', phone: '', message: '', subject: '', email: ''})
-        notify()
-    }, (error) => {
-        Errnotify()
-    });
+    if (value.name === '' || value.phone === '' || value.message === '' || value.subject === '' || value.email === '') {
+      Errnotify("All fields must be filled")
+    } else {
+      setSpinner(true)
+      emailjs.send('service_g401bj6', 'template_jrry03i', value, 'ElCEm00E3DnLjft1k')
+        .then((result) => {
+          setSpinner(false)
+          notify("🚀 Email sent!")
+          setValue({ name: '', phone: '', message: '', subject: '', email: '' })
+        }, (error) => {
+          setSpinner(false)
+          Errnotify("🔄 Please check your internet and Try again!")
+        });
+    }
 
   }
 
@@ -104,7 +113,7 @@ function Contact() {
                 </div>
               </div>
               <div>
-                <Btn onClick={handleSubmit} />
+                <Btn onClick={handleSubmit} text={spinner ? <div className='flex-dis'><div className="mr-1 flex-dis"> <SmSpinner text='Loading...' /> </div></div> : 'send message'} />
               </div>
             </div>
           </div>

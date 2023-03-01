@@ -104,4 +104,9 @@
             color: $action-color
         }
     }
+
+    .flex-dis {
+        @include flex-display;
+        white-space: nowrap;
+    }
 }

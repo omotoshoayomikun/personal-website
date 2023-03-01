@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function Btn({onClick}) {
+export function Btn({onClick, text}) {
   return (
     <>
-    <button className="btn" onClick={onClick}>send message</button>
+    <button className="btn" onClick={onClick}>{text}</button>
     </>
   )
 }
