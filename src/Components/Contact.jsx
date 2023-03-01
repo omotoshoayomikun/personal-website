@@ -3,11 +3,15 @@ import TextArea, { Input } from './Form/Input'
 import { Btn } from './Form/Button'
 import { Link } from 'react-router-dom'
 import { BsFacebook, BsInstagram, BsLinkedin, BsTwitter } from 'react-icons/bs'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import emailjs from '@emailjs/browser';
 
 function Contact() {
 
   document.title = 'Omotosho Ayomikun Contact';
+  const notify = () => toast.success("🚀 Email sent!");
+  const Errnotify = () => toast.error("🔄 Please check your internet and Try again!");
 
   const [value, setValue] = useState({
     name: '',
@@ -25,9 +29,10 @@ function Contact() {
 
     emailjs.send('service_g401bj6', 'template_jrry03i', value, 'ElCEm00E3DnLjft1k')
     .then((result) => {
-        console.log(result.text);
+      setValue({name: '', phone: '', message: '', subject: '', email: ''})
+        notify()
     }, (error) => {
-        console.log(error.text);
+        Errnotify()
     });
 
   }
@@ -56,16 +61,16 @@ function Contact() {
               <div>
                 <h5 className='mb-7'>FIND WITH ME</h5>
                 <div className="icons_container1">
-                  <Link to='' className='icons_ico_cont'>
+                  <Link to='https://twitter.com/OmotoshoAJ' className='icons_ico_cont'>
                     <BsTwitter className='icons_icon' />
                   </Link>
-                  <Link to='' className='icons_ico_cont'>
+                  <Link to='https://www.linkedin.com/in/omotosho-ayomikun-61aa0623a/' className='icons_ico_cont'>
                     <BsLinkedin className='icons_icon' />
                   </Link>
-                  <Link to='' className='icons_ico_cont'>
+                  <Link to='https://www.instagram.com/omotosho_aj/' className='icons_ico_cont'>
                     <BsInstagram className='icons_icon' />
                   </Link>
-                  <Link to='' className='icons_ico_cont'>
+                  <Link to='https://www.facebook.com/ayomikun.omotosho.5/' className='icons_ico_cont'>
                     <BsFacebook className='icons_icon' />
                   </Link>
                 </div>
@@ -104,6 +109,7 @@ function Contact() {
             </div>
           </div>
         </div>
+        <ToastContainer />
       </div>
     </>
   )

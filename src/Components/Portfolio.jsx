@@ -1,6 +1,6 @@
 import React from 'react'
 import { BsEyeFill, BsGithub } from 'react-icons/bs'
-import {AiFillEyeInvisible} from 'react-icons/ai'
+import { AiFillEyeInvisible } from 'react-icons/ai'
 import { Link } from 'react-router-dom'
 
 function Portfolio() {
@@ -20,7 +20,7 @@ function Portfolio() {
       badge: [
         'React JS', 'Javascript', 'Html', 'Css/Scss', 'Redux',
       ],
-      link: 'http://simxchanger.net/',
+      link: 'https://simxchanger.net/',
       github: 'https://github.com/olawale12/simxchanger',
     },
     // {
@@ -77,7 +77,7 @@ function Portfolio() {
       This is a responsive 4 pages web-app, which include Login page, Dashboard page, User page and User details page. User can easily filter list of there details and so on.
       `,
       badge: [
-         'React JS', 'Javascript', 'Html', 'Scss', 'Redux',
+        'React JS', 'Javascript', 'Html', 'Scss', 'Redux',
       ],
       link: 'https://omotosho-ayomikun-lendsqr-test.herokuapp.com/ ',
       github: 'https://github.com/omotoshoayomikun/lendsqr-fe-test',
@@ -127,7 +127,9 @@ function Portfolio() {
                       <div className="no_pre"><AiFillEyeInvisible />Private</div>
                     )
                   }
-                  <img src={data.img} alt="" className="img" />
+                  <Link to={ data.link } target='_blank'>
+                    <img src={data.img} alt="" className="img" />
+                  </Link>
                 </div>
                 <div className="portfolio_wrap">
                   <h2>{data.heading}</h2>
@@ -143,16 +145,16 @@ function Portfolio() {
                   {
                     !data.copyright ? (
                       <div className="icons_container1">
-                      <Link to={data.link} target='blank' className='icons_ico_cont'>
-                        <BsGithub className='icons_icon' />
-                      </Link>
-                      <Link to={data.github} target='blank' className='icons_ico_cont'>
-                        <BsEyeFill className='icons_icon' />
-                      </Link>
-                    </div>
+                        <Link to={data.github} target='blank' className='icons_ico_cont'>
+                          <BsGithub className='icons_icon' />
+                        </Link>
+                        <Link to={data.link} target='blank' className='icons_ico_cont'>
+                          <BsEyeFill className='icons_icon' />
+                        </Link>
+                      </div>
                     ) : ''
                   }
-                 
+
                 </div>
               </div>
             ))
