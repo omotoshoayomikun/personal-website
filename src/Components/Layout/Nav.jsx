@@ -10,7 +10,6 @@ function Nav() {
         window.addEventListener('scroll', () => {
             if(window.scrollY > 250) {
                 setNav(true)
-                console.log(true)
             } else {
                 setNav(false)
             }

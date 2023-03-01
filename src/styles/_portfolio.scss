@@ -45,6 +45,7 @@
                 flex-basis: 50%;
                 overflow: hidden;
                 border-radius: 8px;
+                position: relative;
             }
             
             .img {
@@ -122,6 +123,25 @@
         &:hover {
             color: $action-color
         }
+    }
+
+    .no_pre {
+        position: absolute;
+        // background-color: $alt-color;
+        margin: auto;
+        left: 0;
+        right: 0;
+        width: max-content;
+        height: max-content;
+        top: 0;
+        bottom: 0;
+        padding: 10px;
+        border-radius: 12px;
+        border: 2px solid $alt-color;
+        color: $alt-color;
+        font-weight: 800;
+        box-shadow: 5px 5px 5px grey;
+        z-index: 1;
     }
 
 }

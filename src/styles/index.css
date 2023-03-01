@@ -507,6 +507,7 @@
   flex-basis: 50%;
   overflow: hidden;
   border-radius: 8px;
+  position: relative;
 }
 .project .portfolio_card .img {
   width: 100%;
@@ -563,6 +564,25 @@
 }
 .project .icons_ico_cont:hover {
   color: #ffbd39;
+}
+.project .no_pre {
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  width: -moz-max-content;
+  width: max-content;
+  height: -moz-max-content;
+  height: max-content;
+  top: 0;
+  bottom: 0;
+  padding: 10px;
+  border-radius: 12px;
+  border: 2px solid #171515;
+  color: #171515;
+  font-weight: 800;
+  box-shadow: 5px 5px 5px grey;
+  z-index: 1;
 }
 
 .contact_bio_img {

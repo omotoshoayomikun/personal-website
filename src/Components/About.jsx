@@ -4,8 +4,18 @@ import {BiCloudDownload } from 'react-icons/bi'
 
 function About() {
 
+  document.title = 'Omotosho Ayomikun About';
+
   const handleResume = () => {
-    
+    const url = '/resume/OMOTOSHO_AYOMIKUN_JAMES.docx';
+    const fileName = url.split('/').pop()
+    const aTag = document.createElement('a')
+    aTag.href = url;
+    aTag.setAttribute('download', fileName)
+    document.body.appendChild(aTag)
+    aTag.click()
+    aTag.remove()
+
   }
 
   return (

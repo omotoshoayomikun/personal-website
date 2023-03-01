@@ -1,9 +1,9 @@
 import React from 'react'
 
-export function Btn() {
+export function Btn({onClick}) {
   return (
     <>
-    <button className="btn">send message</button>
+    <button className="btn" onClick={onClick}>send message</button>
     </>
   )
 }
@@ -11,7 +11,7 @@ export function Btn() {
 export function CusBtn({text, onClick}) {
   return (
     <>
-    <button className="cus_btn" onClick={onClick}>{text}</button>
+    <button className="cus_btn" type='submit' onClick={onClick}>{text}</button>
     </>
   )
 }
