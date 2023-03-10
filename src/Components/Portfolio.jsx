@@ -79,7 +79,7 @@ function Portfolio() {
       badge: [
         'React JS', 'Javascript', 'Html', 'Scss', 'Redux',
       ],
-      link: 'https://omotosho-ayomikun-lendsqr-test.herokuapp.com/ ',
+      link: 'https://dynamic-pages-xi.vercel.app/',
       github: 'https://github.com/omotoshoayomikun/lendsqr-fe-test',
     },
     {
